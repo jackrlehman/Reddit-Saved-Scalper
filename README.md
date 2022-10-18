@@ -1,3 +1,4 @@
+<pre>
 # Reddit Saved Scalper
 Last updated: 10/18/2022
 Confirmed working: 10/18/2022
@@ -27,3 +28,4 @@ python -m PyInstaller [args] (ex: python -m PyInstaller script.py)
 Versioning format:
 	v(MONTH).(DAY).(YEAR).(LETTER)
 	v10.18.2022.A
+</pre>
