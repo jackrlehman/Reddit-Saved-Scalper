@@ -1,2 +1,29 @@
-# Reddit-Saved-Scalper
-Selenium bot to download media from Reddit's "saved" tab.
+# Reddit Saved Scalper
+Last updated: 10/18/2022
+Confirmed working: 10/18/2022
+
+## About
+Reddit Saved Scalper downloads all static media (excluding text) from your reddit saved tab. As Reddit's saved tab is limited to 1k posts, and deletes saved items past 1.2k, this utility allows for you to maintain your saved tab without worrying about saved media being forever lost.
+
+## Usage
+Executable Included. Download here: https://github.com/jackrlehman/Reddit-Saved-Scalper/releases
+
+## Packages
+selenium 4.5.0
+webdriver-manager 3.8.3
+urllib3 1.26.12
+
+## Development
+Requires Python 3+
+Requires above packages:
+"pip3 install selenium" 
+"pip3 install webdriver-manager"
+"pip3 install urllib3"
+
+### Exe Creation (Note for self)
+https://stackoverflow.com/questions/5458048/how-can-i-make-a-python-script-standalone-executable-to-run-without-any-dependen for usage. 
+python -m PyInstaller [args] (ex: python -m PyInstaller script.py)
+
+Versioning format:
+	v(MONTH).(DAY).(YEAR).(LETTER)
+	v10.18.2022.A
