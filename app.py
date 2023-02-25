@@ -87,9 +87,13 @@ class Saved:
     __XPATH_postContentAlt1 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[2]/div[1]/div/div[5]/div[3]/div[1]/div/a"
     __XPATH_postContentAlt2 = "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div[3]/div[1]/div[2]/div[1]/div/div[5]/div[3]/div[1]/div/a"
     __XPATH_postContentAlt3 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[2]/div[1]/div/div[5]/div/a"
+    __XPATH_postContentAlt4 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[3]/div[1]/div/div[5]/div/a" 
+    __XPATH_postContentAlt5 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[3]/div[1]/div/div[5]/div[3]/div[1]/div/a" 
+    __XPATH_postContentAlt6 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[3]/div[1]/div/div[6]/div/a"  
     __postContentStandardValue = 5
     __XPATH_postContentArray = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[2]/div[1]/div/div/div/div[5]/div[1]/div/div[1]/ul/li[{0}]/figure/a"
-    __XPATH_postContentArrayAlt = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[2]/div[1]/div/div[5]/div[3]/div/div[1]/div/div[1]/ul/li[{0}]/figure/a"
+    __XPATH_postContentArrayAlt1 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[2]/div[1]/div/div[5]/div[3]/div/div[1]/div/div[1]/ul/li[{0}]/figure/a"
+    __XPATH_postContentArrayAlt2 = "/html/body/div[1]/div/div[2]/div[3]/div/div/div/div[2]/div[1]/div[3]/div[1]/div/div/div/div[5]/div[1]/div/div[1]/ul/li[{0}]/figure/a"
     __postContentArrayStandardValue = 1
     __XPATH_delUser1 = "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div[3]/div[1]/div[2]/div[1]/div[{0}]/div/div/div[2]/div/div[2]/div[2]/div[2]/span[2]"
     __XPATH_delUser2 = "/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div[3]/div[1]/div[2]/div[1]/div[{0}]/div/div/div/div/div[2]/div/div[2]/div[2]/div[2]/span[2]"
@@ -129,7 +133,10 @@ class Saved:
                                 try:
                                     src = driver.find_element(By.XPATH, self.__XPATH_postContentArray.format(self.__postContentArrayStandardValue + j)).get_attribute('href')
                                 except:
-                                    src = driver.find_element(By.XPATH, self.__XPATH_postContentArrayAlt.format(self.__postContentArrayStandardValue + j)).get_attribute('href')
+                                    try:
+                                        src = driver.find_element(By.XPATH, self.__XPATH_postContentArrayAlt1.format(self.__postContentArrayStandardValue + j)).get_attribute('href')
+                                    except:
+                                        src = driver.find_element(By.XPATH, self.__XPATH_postContentArrayAlt2.format(self.__postContentArrayStandardValue + j)).get_attribute('href')
                                 if(".gif" in src):
                                     print("Unsupported Filetype: .gif")
                                     raise Exception("Unsupported Filetype.")
@@ -145,7 +152,17 @@ class Saved:
                                         try:
                                             src = driver.find_element(By.XPATH, self.__XPATH_postContentAlt2).get_attribute('href')
                                         except:
-                                            src = driver.find_element(By.XPATH, self.__XPATH_postContentAlt3).get_attribute('href')
+                                            try:
+                                                src = driver.find_element(By.XPATH, self.__XPATH_postContentAlt3).get_attribute('href')
+                                            except:
+                                                try:
+                                                    src = driver.find_element(By.XPATH, self.__XPATH_postContentAlt4).get_attribute('href')
+                                                except:
+                                                    try:
+                                                        src = driver.find_element(By.XPATH, self.__XPATH_postContentAlt5).get_attribute('href')
+                                                    except:
+                                                        src = driver.find_element(By.XPATH, self.__XPATH_postContentAlt6).get_attribute('href')
+
                                 if('flair' in src): #Flair was percieved to be content source, keep looking.
                                     i += 1
                                     if(i > 20): #If webpage loads inproperly...
