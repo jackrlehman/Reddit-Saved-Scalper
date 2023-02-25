@@ -1,5 +1,5 @@
 # Reddit Saved Scalper
-Last updated: 10/18/2022. Current version broken as of 2/18/2023.
+Last updated: 2/18/2022. Executable behind code version, please build with your code editor for the latest.
 
 ## About
 Reddit Saved Scalper downloads all static media (excluding text) from your reddit saved tab. As Reddit's saved tab is limited to 1k posts, and deletes saved items past 1.2k, this utility allows for you to maintain your saved tab without worrying about saved media being forever lost.
